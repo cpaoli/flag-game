@@ -68,14 +68,14 @@ class App extends Component {
                                      rightAnswer = {this.state.rightAnswer} message = {this.state.message}
                                      handleOptionChange = { selectedOption => this.setState({selectedOption})}
                                      handleSubmit = {this.handleSubmit} /> : <div style={{textAlign: "center"}}>
-                                    <h2 style={{margin: "1em"}}>
+                                    <h2 style={{margin: "1em", color: "#C8C8C8"}}>
                                         {this.state.message}
                                     </h2>
                                     <button className="btn-sm btn btn-light" onClick={() => this.startGame()}>
                                         NEXT
                                     </button>
                                 </div>}
-                    <div style={{position: "fixed", top:" 50%", left: "50%", transform: "translate(-50%, -50%)"}} className="centerItem">
+                    <div style={{position: "fixed", top:" 50%", left: "50%", transform: "translate(-50%, -20%)"}} className="centerItem">
                         <Flag flag = {this.state.flag}/>
                         <div className="score">
                             <h1>Score: {this.state.score}</h1>
