@@ -1,12 +1,13 @@
 import React from "react";
 
 const Choices = ({choices, selectedOption, handleOptionChange, rightAnswer, message, handleSubmit}) => {
-    const choicesList = choices.map((c, index) => (
-        <div key= {index} className="radio-inline col form-check form-group" style={{marginTop: "2em"}}>
+    const choicesList = choices.map((choice, index) => (
+        <div key= {index} className="radio-inline col form-check form-group">
             <label className="labelItem">
-                <input className="inputItem" type="radio" name="flagOption" value={c} checked={selectedOption===c} onChange = {() => handleOptionChange(c)} /> <span
-                className="label-text">
-                   <span>  </span>{c}
+                <input className="inputItem" type="radio" name="flagOption"
+                value={choice} checked={selectedOption===choice} onChange = {() => handleOptionChange(choice)} />
+                <span className="label-text">
+                <span>  {choice}</span>
                 </span>
             </label>
         </div>
@@ -15,11 +16,11 @@ const Choices = ({choices, selectedOption, handleOptionChange, rightAnswer, mess
     return(
         <div className="container-fluid">
             <div className="row-fluid" >
-                <form onSubmit = {handleSubmit} id="options" className="">
-                    <div style={{textAlign: "center"}}>
+                <form onSubmit = {handleSubmit} id="options" className="options">
+                    <div className="c-list">
                     {choicesList}
                     <br/>
-                    <button className="btn btn-light btn-sm" style={{marginTop: "1.5em"}} type="submit" form="options">GUESS</button>
+                    <button className="btn btn-light btn-sm guess-button" type="submit" form="options">GUESS</button>
                     </div>
                 </form>
             </div>
